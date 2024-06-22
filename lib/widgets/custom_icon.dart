@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class CustomIconForAppBar extends StatelessWidget {
   const CustomIconForAppBar({
     super.key,
-    this.icon,
+    required this.icon,
   });
-  final IconData? icon;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,8 @@ class CustomIconForAppBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         color: Colors.white.withOpacity(.05),
       ),
-      child: const Icon(
-        Icons.search,
+      child: Icon(
+        icon,
       ),
     );
   }
