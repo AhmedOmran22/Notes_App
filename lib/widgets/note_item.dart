@@ -44,7 +44,7 @@ class NoteItem extends StatelessWidget {
             subtitle: const Padding(
               padding: EdgeInsets.only(bottom: 12),
               child: Text(
-                'build your career with tharwat samy ',
+                'build your career with Ahmed Omran ',
                 style: TextStyle(
                   color: Color(0xff936B31),
                   fontSize: 18,
@@ -56,7 +56,7 @@ class NoteItem extends StatelessWidget {
                 icon: const Icon(
                   FontAwesomeIcons.trash,
                   color: Colors.black,
-                  size: 28  ,
+                  size: 28,
                 )),
           ),
           const Padding(
