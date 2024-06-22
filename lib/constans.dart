@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-const kPromaryColor =  Color.fromARGB(255, 63, 233, 208);
+const kPrimaryColor = Color.fromARGB(255, 63, 233, 208);
