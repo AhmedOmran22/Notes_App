@@ -1,17 +1,22 @@
-import 'package:flutter/material.dart';
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SimpleBlocObserver implements BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
-    debugPrint('change ${change.toString()}');
+    log('change ${change.toString()}');
   }
 
   @override
-  void onClose(BlocBase bloc) {}
+  void onClose(BlocBase bloc) {
+    log('close ${bloc.toString()}');
+  }
 
   @override
-  void onCreate(BlocBase bloc) {}
+  void onCreate(BlocBase bloc) {
+    log('create ${bloc.toString()}');
+  }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {}
