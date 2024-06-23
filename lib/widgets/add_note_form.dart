@@ -38,7 +38,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(height: 16),
           CustomTextFormField(
             hint: 'Content',
-            maxLines: 10,
+            maxLines: 8,
             onSaved: (value) {
               subTitle = value;
             },
