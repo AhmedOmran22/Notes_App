@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/constans.dart';
 import 'package:notes_app/helpers.dart';
 import 'package:notes_app/models/note_model.dart';
-import 'package:notes_app/widgets/color_item.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 import 'package:notes_app/widgets/edit_note_coloe_list_view.dart';
