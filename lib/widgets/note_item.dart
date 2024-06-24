@@ -71,7 +71,7 @@ class NoteItem extends StatelessWidget {
               child: Text(
                 note.date,
                 style: TextStyle(
-                  color: Colors.black.withOpacity(.4),
+                  color: Colors.black.withOpacity(.5),
                 ),
               ),
             ),
