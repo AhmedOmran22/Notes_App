@@ -36,7 +36,7 @@ class NoteItem extends StatelessWidget {
           children: [
             ListTile(
               title: Padding(
-                padding: const EdgeInsets.only(bottom: 12),
+                padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -59,12 +59,15 @@ class NoteItem extends StatelessWidget {
                 ),
               ),
               trailing: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    FontAwesomeIcons.trash,
-                    color: Colors.black,
-                    size: 28,
-                  )),
+                onPressed: () {
+                  note.delete();
+                },
+                icon: const Icon(
+                  FontAwesomeIcons.trash,
+                  color: Colors.black,
+                  size: 28,
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(right: 32),
