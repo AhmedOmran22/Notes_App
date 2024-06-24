@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:notes_app/constans.dart';
 import 'package:notes_app/cubits/Add%20note%20cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/widgets/color_item_list_view.dart';
 import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
@@ -45,29 +46,14 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
           ),
           const SizedBox(height: 16),
+          const ColorsListView(),
+          const SizedBox(height: 16),
           BlocBuilder<AddNoteCubit, AddNoteStates>(
             builder: (context, state) {
               return CustomButton(
                 isLoading: state is AddNoteLoading ? true : false,
                 onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    formKey.currentState!.save();
-
-                    var currentDate = DateTime.now();
-                    var formatedCurrentDate =
-                        DateFormat.yMd().format(currentDate);
-
-                    NoteModel noteModel = NoteModel(
-                      title: title!,
-                      subTitle: subTitle!,
-                      date: formatedCurrentDate,
-                      color: kPrimaryColor.value,
-                    );
-                    BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-                  } else {
-                    autovalidateMode = AutovalidateMode.always;
-                    setState(() {});
-                  }
+                  onTapMethod(context);
                 },
               );
             },
@@ -76,5 +62,25 @@ class _AddNoteFormState extends State<AddNoteForm> {
         ],
       ),
     );
+  }
+
+  void onTapMethod(BuildContext context) {
+    if (formKey.currentState!.validate()) {
+      formKey.currentState!.save();
+
+      var currentDate = DateTime.now();
+      var formatedCurrentDate = DateFormat.yMd().format(currentDate);
+
+      NoteModel noteModel = NoteModel(
+        title: title!,
+        subTitle: subTitle!,
+        date: formatedCurrentDate,
+        color: kPrimaryColor.value,
+      );
+      BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+    } else {
+      autovalidateMode = AutovalidateMode.always;
+      setState(() {});
+    }
   }
 }
